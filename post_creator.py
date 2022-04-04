@@ -20,17 +20,16 @@ def create_post(img_base,text):
     post = Image.open(img_base)
     cover = Image.open("raw/post_cover.png")
 
-    #rendere l'immagine quadrata
+    #resize image
     size = post.size
     if size[0]!=size[1]:
         
         area = (0, 0, min(size), min(size))
         post = post.crop(area)
 
-    #ridimensionare l'immagine in 1080
     post = post.resize((1080,1080),Image.ANTIALIAS)
 
-    #sovrapposizione del filtro
+    #apply filter
     post.paste(cover,(0,0),cover)
 
 
@@ -56,10 +55,10 @@ def create_post(img_base,text):
 
     print(f'font size : {font_size}\n')
     
-    #troviamo la dimensione del testo unilinea 
+    #text size (if one line)
     text_size = draw.textsize(quote, font=font)
 
-    #divisione del testo se troppo lungo
+    #text division
     if text_size[0] > max_w:
 
         splitted_quote = quote.split(' ')
@@ -98,10 +97,10 @@ def create_post(img_base,text):
     quote = ' '.join(multiline_quote)
     divided_quote = quote
 
-    #ricalcolo le dimansioni del testo multi linea
+    #text size
     text_size = draw.multiline_textsize(divided_quote, font=font, spacing=(font_size/2.5))
 
-    #trovare coordinate testo
+    #text coordinates
     text_x = 540 - text_size[0]/2
     text_y = 540 - text_size[1]/2
     print(text_x,text_y)
@@ -109,16 +108,17 @@ def create_post(img_base,text):
     #print text
     draw.multiline_text((text_x,text_y), divided_quote ,(255,255,255),font=font, align = 'center', spacing=(font_size/2.5))
 
-    #creo e aggiungo il divider
-    divider_spessore = 2
-    #trovare coordinate divider
+    #divider
+    divider_thickness = 2
+    
+    #divider coordinates
     div_x_1 = 540 - text_size[0]/2
-    div_y_1_1 = 540 - (text_size[1]/2 + divider_spessore + 15)
-    div_y_1_2 = 540 + (text_size[1]/2 + divider_spessore + 20)
+    div_y_1_1 = 540 - (text_size[1]/2 + divider_thickness + 15)
+    div_y_1_2 = 540 + (text_size[1]/2 + divider_thickness + 20)
 
     div_x_2 = div_x_1 + text_size[0]
-    div_y_2_1 = div_y_1_1 + divider_spessore
-    div_y_2_2 = div_y_1_2 + divider_spessore
+    div_y_2_1 = div_y_1_1 + divider_thickness
+    div_y_2_2 = div_y_1_2 + divider_thickness
     
     #draw dividers
     draw.rectangle([div_x_1,div_y_1_1,div_x_2,div_y_2_1], fill= 'white')
@@ -138,7 +138,7 @@ def create_post(img_base,text):
     if author:
         
         font = ImageFont.truetype("fonts/LFAXD.ttf", 25)
-        #coordinate autore
+        #author coordinates
         author_x = 540 - draw.textsize(author, font=font)[0]/2
         author_y = div_y_2_2 + 10
 
