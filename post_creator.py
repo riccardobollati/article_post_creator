@@ -1,4 +1,3 @@
-from posixpath import split
 from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
@@ -76,7 +75,7 @@ def create_post(img_base,text):
 
                 if len(splitted_quote)-(i+1) != 1:
                     while draw.textsize(line, font=font)[0] < 600:                                      
-                        print(i)
+
                         if draw.textsize((line + f' {splitted_quote[i+1]}'), font=font)[0] < 600:
 
                             line = line + f' {splitted_quote[i+1]}'
@@ -103,7 +102,6 @@ def create_post(img_base,text):
     #text coordinates
     text_x = 540 - text_size[0]/2
     text_y = 540 - text_size[1]/2
-    print(text_x,text_y)
 
     #print text
     draw.multiline_text((text_x,text_y), divided_quote ,(255,255,255),font=font, align = 'center', spacing=(font_size/2.5))

@@ -7,8 +7,6 @@ def hex_to_rgb(value):
 
 def logo_creator(simple_logo,schizzo,new_col):
 
-    #applicare colore allo schizzo
-
     rgb_new_col = hex_to_rgb(new_col)
 
     image = Image.open(schizzo)
@@ -24,7 +22,7 @@ def logo_creator(simple_logo,schizzo,new_col):
             if pixelMap[i,j][3] > 50 and pixelMap[i,j][0] < 255:
                 pixelsNew[i,j] = rgb_new_col
                 
-    #unione logo e schizzo
+    #merge logo and color
     logo_post = Image.open(simple_logo)
     logo_post.paste(newImg,(0,0),newImg)
 
