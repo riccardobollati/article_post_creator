@@ -14,7 +14,7 @@ def create_post(img_base,text):
     #text max width
     max_w = 800
     
-    #trova colore principale in formato HEX
+    #find main color in HEX format
     main_color = dominant_color.find_color(img_base)
     print(f'main color: {main_color}')
     post = Image.open(img_base)
@@ -51,7 +51,7 @@ def create_post(img_base,text):
     else:
         font_size = base_size
 
-    font = ImageFont.truetype("AvenirLTStd-Black.otf", font_size)
+    font = ImageFont.truetype("fonts/AvenirLTStd-Black.otf", font_size)
                                            
 
     print(f'font size : {font_size}\n')
@@ -69,12 +69,12 @@ def create_post(img_base,text):
 
         print(f'len qote: {len(splitted_quote)}')
         
-        while len(splitted_quote)-(i):                                                            #finche mancano parole da aggiungere
+        while len(splitted_quote)-(i):
 
-            line = splitted_quote[i]                                                                #creo la linea
+            line = splitted_quote[i]
 
             if (len(splitted_quote) - i) > 2: 
-                                                                      #se nn è l'ultima parola
+
                 if len(splitted_quote)-(i+1) != 1:
                     while draw.textsize(line, font=font)[0] < 600:                                      
                         print(i)
@@ -134,10 +134,10 @@ def create_post(img_base,text):
 
     post.paste(logo,(x_logo,y_logo),logo)
 
-    #aggiunta autore
+    #add author
     if author:
         
-        font = ImageFont.truetype("LFAXD.ttf", 25)
+        font = ImageFont.truetype("fonts/LFAXD.ttf", 25)
         #coordinate autore
         author_x = 540 - draw.textsize(author, font=font)[0]/2
         author_y = div_y_2_2 + 10
