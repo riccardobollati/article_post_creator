@@ -18,7 +18,7 @@ def create_post(img_base,text):
     main_color = dominant_color.find_color(img_base)
     print(f'main color: {main_color}')
     post = Image.open(img_base)
-    cover = Image.open("pics/post_cover.png")
+    cover = Image.open("raw/post_cover.png")
 
     #rendere l'immagine quadrata
     size = post.size
@@ -35,11 +35,11 @@ def create_post(img_base,text):
 
 
     #quote writing -------------------------------------------------------------------------------------------
-    #frase
-    quote = text.split('~')[0]
-    #autore
-    if len(text.split('~')) != 1 :
-        author = text.split('~')[1]
+    #quote
+    quote = text[0]
+    #author
+    if text[1] :
+        author = text[1]
     else:
         author = False
 
