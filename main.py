@@ -9,7 +9,7 @@ image_path = askopenfilename() # show an "Open" dialog box and return the path t
 
 quote = [0,0]
 quote[0] = input("type the sentence:\n")
-quote[1] = input("type the author, if you don't want one leave blank and press enter:\n ")
+quote[1] = input("type the author, if you don't want one leave blank and press enter:\n")
 
 post = post_creator.create_post(image_path,quote)
 post.save('post/post.png')
