@@ -44,7 +44,6 @@ def create_post(img_base,text):
     draw = ImageDraw.Draw(post)
     
     if len(quote) > 68:
-        print(math.log( ((len(quote)-9)**39),6)-88)
         font_size = int(base_size -  (math.log( ((len(quote)-9)**39),6)-88))
     else:
         font_size = base_size
@@ -64,8 +63,6 @@ def create_post(img_base,text):
         multiline_quote = []
 
         i = 0
-
-        print(f'len qote: {len(splitted_quote)}')
         
         while len(splitted_quote)-(i):
 
