@@ -1,4 +1,3 @@
-import os
 import post_creator
 
 from tkinter import Tk     # from tkinter import Tk for Python 3.x
