@@ -1,3 +1,4 @@
+# 🔴this is an old project🔴
 # article_post_creator
 an algorithm that given a picture, a sentence and (optional) an author create a post for IG, adjusting the positions of the dividers in the post, the text dimension based on the text length and apply a small logo on the top which colour change according to the main image color 
 # how it works
