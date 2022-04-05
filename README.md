@@ -9,6 +9,7 @@ to resize the text size to fit all the content into the post i decided to subtra
 the final result of the program looks like this:
 
 <p align="middle">
-  <img src="post/post.png" alt="esample" width="400"/>
+  <img src="post/post.png" alt="esample" width="450"/>
+  <img src="post/post_2.png" alt="esample" width="450"/>
 </p>
 
