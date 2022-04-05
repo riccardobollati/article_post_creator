@@ -8,4 +8,7 @@ to resize the text size to fit all the content into the post i decided to subtra
 # final result
 the final result of the program looks like this:
 
-![example](post\post.png)
+<p align="middle">
+  <img src="post/post.png" alt="esample" width="400"/>
+</p>
+
