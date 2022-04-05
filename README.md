@@ -7,4 +7,5 @@ After you've inserted the arguments the program will create the post searching f
 to resize the text size to fit all the content into the post i decided to subtract to the base character size (70) a logarithm function (yuo can find the code at the line 48 of the post_creator.py script)
 # final result
 the final result of the program looks like this:
-![exemple](post\post.png)
+
+![example](post\post.png)
